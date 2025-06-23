@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/yuchengliu/Desktop/ESP32_pj/basic_freertos_smp_usage/build/CMakeFiles/bootloader"
+		},
+		{
+			"file" : "/Users/yuchengliu/Desktop/ESP32_pj/basic_freertos_smp_usage/build/CMakeFiles/bootloader.rule"
+		},
+		{
+			"file" : "/Users/yuchengliu/Desktop/ESP32_pj/basic_freertos_smp_usage/build/CMakeFiles/bootloader-complete.rule"
+		},
+		{
+			"file" : "/Users/yuchengliu/Desktop/ESP32_pj/basic_freertos_smp_usage/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
+		},
+		{
+			"file" : "/Users/yuchengliu/Desktop/ESP32_pj/basic_freertos_smp_usage/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
+		},
+		{
+			"file" : "/Users/yuchengliu/Desktop/ESP32_pj/basic_freertos_smp_usage/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
+		},
+		{
+			"file" : "/Users/yuchengliu/Desktop/ESP32_pj/basic_freertos_smp_usage/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
+		},
+		{
+			"file" : "/Users/yuchengliu/Desktop/ESP32_pj/basic_freertos_smp_usage/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
+		},
+		{
+			"file" : "/Users/yuchengliu/Desktop/ESP32_pj/basic_freertos_smp_usage/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
+		},
+		{
+			"file" : "/Users/yuchengliu/Desktop/ESP32_pj/basic_freertos_smp_usage/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"bootloader"
+		],
+		"name" : "bootloader"
+	}
+}

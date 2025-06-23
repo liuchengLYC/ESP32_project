@@ -1,0 +1,2 @@
+source /Users/yuchengliu/Desktop/ESP32_pj/basic_freertos_smp_usage/build/gdbinit/symbols
+source /Users/yuchengliu/Desktop/ESP32_pj/basic_freertos_smp_usage/build/gdbinit/connect
