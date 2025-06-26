@@ -3,6 +3,7 @@
 #include "freertos/task.h"
 #include "freertos/semphr.h"
 #include "sdkconfig.h"
+#include "esp_log.h"
 
 const int M1[4][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
 const int M2[4][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
@@ -18,7 +19,7 @@ void task(void *arg){
         if(xSemaphoreTake(mutex, portMAX_DELAY) == pdTRUE){
             if(cur_job >= 32){
                 xSemaphoreGive(mutex);
-                break;
+                break;;
             }else{
                 job = cur_job++;
                 xSemaphoreGive(mutex);
@@ -42,7 +43,7 @@ void task(void *arg){
         }
         vTaskDelay(pdMS_TO_TICKS(100));
     }
-    printf("task done");
+    ESP_LOGI("TASK", "task done");
     vTaskDelete(NULL);
 }
 
