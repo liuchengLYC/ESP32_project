@@ -1,0 +1,2 @@
+source /Users/yuchengliu/Desktop/ESP32_pj/HW_week2/build/bootloader/gdbinit/symbols
+source /Users/yuchengliu/Desktop/ESP32_pj/HW_week2/build/bootloader/gdbinit/connect
