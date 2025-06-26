@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "HW_week2",
-    "project_version":    "327de19-dirty",
+    "project_version":    "914d69f-dirty",
     "project_path":       "/Users/yuchengliu/Desktop/ESP32_pj/HW_week2",
     "idf_path":           "/Users/yuchengliu/esp/esp-idf",
     "build_dir":          "/Users/yuchengliu/Desktop/ESP32_pj/HW_week2/build",
