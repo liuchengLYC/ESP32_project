@@ -49,6 +49,6 @@ void task(void *arg){
 void app_main(void){
     mutex = xSemaphoreCreateMutex();
 
-    xTaskCreate(task, "task A multiply", 2048, NULL, 3, NULL);
-    xTaskCreate(task, "task B multiply", 2048, NULL, 3, NULL);
+    xTaskCreatePinnedToCore(task, "task A multiply", 2048, NULL, 3, NULL, 0);
+    xTaskCreatePinnedToCore(task, "task B multiply", 2048, NULL, 3, NULL, 1);
 }
