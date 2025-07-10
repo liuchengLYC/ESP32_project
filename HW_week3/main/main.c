@@ -14,9 +14,9 @@
 #define END_X 6                   
 #define END_Y 6               
 
-#define PIN_NUM_MOSI 26
-#define PIN_NUM_CLK 32
-#define PIN_NUM_CS 33
+#define PIN_NUM_MOSI 12
+#define PIN_NUM_CLK 27
+#define PIN_NUM_CS 14
 #define DISPLAY_SIZE 8
 
 static spi_device_handle_t spi;

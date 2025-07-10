@@ -1,6 +1,0 @@
-{
-    "idf.port": "/dev/tty.usbserial-120",
-    "idf.espIdfPath": "/Users/yuchengliu/esp/esp-idf",
-    "idf.toolsPath": "/Users/yuchengliu/.espressif",
-    "idf.pythonInstallPath": "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3"
-}
