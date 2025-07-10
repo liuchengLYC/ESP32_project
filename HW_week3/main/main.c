@@ -51,6 +51,12 @@ void max7219_init() {
 }
 
 // ======= Timer Callback Function =======
+void IRAM_ATTR timer_callback2(void* arg){
+    memset(display_buffer, 0, sizeof(display_buffer));
+    for (int y = 0; y < DISPLAY_SIZE; y++) {
+        display_buffer[y] = 0x80; // 10000000
+    }
+}
 void IRAM_ATTR timer_callback(void* arg) {
     if (reached_end) return;
 
