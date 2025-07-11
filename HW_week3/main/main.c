@@ -11,7 +11,7 @@
 #define INITIAL_Y 1
 #define VELOCITY_X 1                   
 #define VELOCITY_Y 1                   
-#define END_X 6                   
+#define END_X 3                  
 #define END_Y 6               
 
 #define PIN_NUM_MOSI 12
@@ -34,7 +34,7 @@ void max7219_send(uint8_t address, uint8_t data) {
     uint8_t tx_data[2] = {address, data};
     spi_transaction_t t = {
         .length = 16, // bits
-        .tx_buffer = tx_data
+        .tx_buffer = &tx_data
     };
     spi_device_transmit(spi, &t); // 阻塞式傳輸
 }
@@ -75,7 +75,7 @@ void IRAM_ATTR timer_callback(void* arg) {
     int next_y = ball_y + vy;
 
     // 撞牆或邊界反彈
-    if (next_x >= DISPLAY_SIZE || next_x <= 1) vx *= -1;
+    if (next_x >= DISPLAY_SIZE || next_x < 1) vx *= -1;
     if (next_y >= DISPLAY_SIZE || next_y < 0) vy *= -1;
 
     ball_x += vx;
