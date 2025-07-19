@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "esp-idf/xtensa",
+		"source" : "/Users/yuchengliu/esp/esp-idf/components/xtensa"
+	}
+}

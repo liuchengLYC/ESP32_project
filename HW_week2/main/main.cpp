@@ -4,10 +4,15 @@
 #include "freertos/semphr.h"
 #include "sdkconfig.h"
 #include "esp_log.h"
+#include <vector>
+using namespace std;
 
-const int M1[4][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
-const int M2[4][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
-int M3[4][4] = {0};
+// const int M1[4][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
+// const int M2[4][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
+// int M3[4][4] = {0};
+vector<vector<int>> M1 = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
+vector<vector<int>> M2 = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
+vector<vector<int>> M3 = vector(4, vector<int>(4, 0));
 int sum = 0;
 int cur_job = 0;
 static SemaphoreHandle_t mutex;
@@ -47,7 +52,7 @@ void task(void *arg){
     vTaskDelete(NULL);
 }
 
-void app_main(void){
+extern "C" void app_main(void){
     mutex = xSemaphoreCreateMutex();
 
     xTaskCreatePinnedToCore(task, "task A multiply", 2048, NULL, 3, NULL, 0);

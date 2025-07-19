@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "HW_week2",
-    "project_version":    "1778946-dirty",
+    "project_version":    "d15feb6-dirty",
     "project_path":       "/Users/yuchengliu/Desktop/ESP32_pj/HW_week2",
     "idf_path":           "/Users/yuchengliu/esp/esp-idf",
     "build_dir":          "/Users/yuchengliu/Desktop/ESP32_pj/HW_week2/build",
@@ -370,7 +370,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "/Users/yuchengliu/Desktop/ESP32_pj/HW_week2/build/esp-idf/main/libmain.a",
-            "sources": [ "/Users/yuchengliu/Desktop/ESP32_pj/HW_week2/main/main.c" ],
+            "sources": [ "/Users/yuchengliu/Desktop/ESP32_pj/HW_week2/main/main.cpp" ],
             "include_dirs": [ "." ]
         },
         "mbedtls": {
