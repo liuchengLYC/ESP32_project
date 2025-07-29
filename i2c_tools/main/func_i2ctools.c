@@ -102,7 +102,7 @@ esp_err_t i2c_write(uint8_t chip_addr, uint8_t reg_addr, const uint8_t *data, si
     uint8_t *buf = malloc(len + 1);
     buf[0] = reg_addr;
     memcpy(&buf[1], data, len);
-    ret = i2c_master_transmit(dev_handle, buf, len + 1, I2C_TOOL_TIMEOUT_MS);
+    ret = i2c_master_transmiㄉㄉt(dev_handle, buf, len + 1, I2C_TOOL_TIMEOUT_MS);
 
     free(buf);
     i2c_master_bus_rm_device(dev_handle);
