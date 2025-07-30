@@ -5,7 +5,7 @@
 #include "freertos/task.h"
 
 static uint32_t i2c_freq = 100000;
-static uint8_t iref_current = 0xFF;
+static uint8_t iref_current = 0x10;
 static int timeout = 50;
 
 PCA9955::PCA9955(i2c_master_bus_handle_t& bus_handle, uint8_t chip_addr, int channel_num){
@@ -53,6 +53,13 @@ esp_err_t PCA9955::display_color(uint8_t data[3], int channel_index){
 
 esp_err_t PCA9955::display_frame(uint8_t data[][3], int len){
     return ESP_OK;
+}
+
+esp_err_t PCA9955::adjust_iref_cur(uint8_t current, int led_pin, bool all){
+    uint8_t buf[2] = {0xFF, current};
+    if(all) buf[0] = 0x45;
+    else buf[0] = 0x18 + led_pin;
+    return i2c_master_transmit(dev_handle, buf, 2, timeout);
 }
 
 esp_err_t bus_init(i2c_master_bus_handle_t& bus_handle, int port, gpio_num_t sda_gpio, gpio_num_t scl_gpio) {

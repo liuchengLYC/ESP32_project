@@ -20,4 +20,5 @@ extern "C" void app_main(){
     ESP_ERROR_CHECK(device.display_color(data, 0));
     end = esp_timer_get_time();
     ESP_LOGI(tag, "color display uses %lldus", end - start);
+    ESP_LOGI(tag, "object size %d %d", sizeof(device), sizeof(uint8_t*));
 }
