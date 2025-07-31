@@ -39,11 +39,11 @@ esp_err_t PCA9955::dev_init(i2c_master_bus_handle_t& bus_handle, uint8_t chip_ad
 }
 
 
-esp_err_t PCA9955::display_color(uint8_t data[3], int channel_index){
+esp_err_t PCA9955::display_color(LED_color *data, int channel_index){
     uint8_t reg_r = 3 * channel_index + 8, reg_g = 3 * channel_index + 9, reg_b = 3 * channel_index + 10; 
-    uint8_t bufr[2] = {reg_r, data[0]};
-    uint8_t bufg[2] = {reg_g, data[1]};
-    uint8_t bufb[2] = {reg_b, data[2]};
+    uint8_t bufr[2] = {reg_r, data->red};
+    uint8_t bufg[2] = {reg_g, data->green};
+    uint8_t bufb[2] = {reg_b, data->blue};
     esp_err_t ret;
     ret = i2c_master_transmit(dev_handle, bufr, 2, timeout);
     ret = i2c_master_transmit(dev_handle, bufg, 2, timeout);
@@ -51,8 +51,13 @@ esp_err_t PCA9955::display_color(uint8_t data[3], int channel_index){
     return ret;
 }
 
-esp_err_t PCA9955::display_frame(uint8_t data[][3], int len){
-    return ESP_OK;
+esp_err_t PCA9955::display_frame(LED_color data[][1]){
+    esp_err_t ret = ESP_OK;
+    for(int i=0; i<channel_num; i++){
+        ret = display_color(data[i], i);
+        if(ret != ESP_OK) return ret;
+    }
+    return ret;
 }
 
 esp_err_t PCA9955::adjust_iref_cur(uint8_t current, int led_pin, bool all){

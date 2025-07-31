@@ -15,9 +15,10 @@ extern "C" void app_main(){
     PCA9955 device(bus_handle, 0x22, 5);
     end = esp_timer_get_time();
     ESP_LOGI(tag, "device init uses %lldus", end - start);
-    uint8_t data[3] = {255, 255, 255};
+    LED_color data;
+    data.red = data.blue = data.green = 0xFF;
     start = esp_timer_get_time();
-    ESP_ERROR_CHECK(device.display_color(data, 0));
+    ESP_ERROR_CHECK(device.display_color(&data, 0));
     end = esp_timer_get_time();
     ESP_LOGI(tag, "color display uses %lldus", end - start);
     ESP_LOGI(tag, "object size %d %d", sizeof(device), sizeof(uint8_t*));
